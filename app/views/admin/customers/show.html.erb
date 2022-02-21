@@ -1,2 +1,70 @@
-<h1>Admin::Customers#show</h1>
-<p>Find me in app/views/admin/customers/show.html.erb</p>
+<span>会員詳細</span>
+
+
+<div class="container">
+  <div class="row">
+
+    <div class="col-lg-8">
+    <table class="table table-inverse" style="border:none;">
+          <thead style="border:none;">
+            <tr style="border:none;">
+              <th style="border:none;">会員ID</th>
+              <td style="border:none;"><%= @customer.id %></td>
+            </tr>
+
+            <tr style="border:none;">
+              <th style="border:none;">氏名</th>
+              <td style="border:none;"><%= @customer.last_name %>  <%= @customer.first_name %></td>
+            </tr>
+
+            <tr style="border:none;">
+              <th style="border:none;">フリガナ</th>
+              <td style="border:none;"><%= @customer.last_name_kana %>  <%= @customer.first_name_kana %></td>
+            </tr>
+
+            <tr style="border:none;">
+              <th style="border:none;">郵便番号</th>
+              <td style="border:none;"><%= @customer.postal_code %></td>
+            </tr>
+
+             <tr style="border:none;">
+              <th style="border:none;">住所</th>
+              <td style="border:none;"><%= @customer.address %></td>
+            </tr>
+
+             <tr style="border:none;">
+              <th style="border:none;">電話番号</th>
+              <td style="border:none;"><%= @customer.telephone_number %></td>
+            </tr>
+
+             <tr style="border:none;">
+              <th style="border:none;">メールアドレス</th>
+              <td style="border:none;"><%= @customer.email %></td>
+            </tr>
+
+            <tr style="border:none;">
+              <th class="nowrap" style="border:none;">会員ステータス</th>
+              <td style="border:none;">
+                <% if @customer.is_active == true %>
+                  有効
+                  <% else %>
+                  退会
+                  <% end %>
+              </td>
+            </tr>
+
+            <tr style="border:none;">
+              <th style="border:none;"></th>
+              <td style="border:none;">
+                <%= link_to "編集する", edit_admin_customer_path(@customer.id), class:"btn btn-success"%>
+                <%= link_to "注文履歴一覧を見る", edit_admin_customer_path(@customer.id), class:"btn btn-info"%>
+              </td>
+            </tr>
+          </thead>
+    </table>
+
+  </div>
+
+
+  </div>
+</div>

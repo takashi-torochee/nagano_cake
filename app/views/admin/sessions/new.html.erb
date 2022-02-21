@@ -1,2 +1,24 @@
-<h1>Admin::Sessions#new</h1>
-<p>Find me in app/views/admin/sessions/new.html.erb</p>
+
+  <span>管理者ログイン</span>
+
+<%= form_with model: @admin, url: admin_session_path do |f| %>
+
+<div class="admin_login">
+  <div class="field">
+    <%= f.label "メールアドレス　　　" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", :size => "40*40" %>
+  </div>
+
+  <div class="field">
+    <%= f.label "パスワード　　　　　" %>
+    <%= f.password_field :password, autocomplete: "current-password", :size => "40*40" %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "ログイン", class:"btn btn-primary" %>
+  </div>
+<% end %>
+</div>
+</div>
+

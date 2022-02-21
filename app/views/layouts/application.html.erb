@@ -11,6 +11,53 @@
   </head>
 
   <body>
+<div class="wrapper">
+    <header>
+      <nav class="navbar navbar-expand-sm navbar-light bg-info mb-5 p-4 outline-black">
+        <div class="container">
+          <a class="navbar-brand p-3" href="/">Nagano-Cake</a>
+          <div class="collapse navbar-collapse justify-content-end">
+            <ul class="navbar-nav">
+
+        <div class="flex">
+
+          <button type="button" class="btn btn-outline-dark bg-light">
+            <li class="nav-item">
+              About
+            </li>
+          </button>
+
+          <button type="button" class="btn btn-outline-dark bg-light">
+            <li class="nav-item">
+              商品一覧
+            </li>
+          </button>
+
+          <button type="button" class="btn btn-outline-dark bg-light">
+            <li class="nav-item">
+              新規登録
+            </li>
+          </button>
+
+          <button type="button" class="btn btn-outline-dark bg-light">
+            <li class="nav-item">
+              ログイン
+            </li>
+          </button>
+
+        </div>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
     <%= yield %>
+
+
+     <footer class="bg-info">
+
+    </footer>
+  </div>
   </body>
 </html>

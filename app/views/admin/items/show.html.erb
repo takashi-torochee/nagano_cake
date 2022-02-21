@@ -1,2 +1,54 @@
-<h1>Admin::Items#show</h1>
-<p>Find me in app/views/admin/items/show.html.erb</p>
+<span>商品詳細</span>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+
+    <%= image_tag @item.image, size: "300x200" %>
+
+    </div>
+
+
+    <div class="col-lg-4">
+    <table class="table table-inverse" style="border:none;">
+          <thead style="border:none;">
+            <tr style="border:none;">
+              <th style="border:none;">商品名</th>
+              <td style="border:none;"><%= @item.name %></td>
+            </tr>
+
+            <tr style="border:none;">
+              <th style="border:none;">商品説明</th>
+              <td style="border:none;"><%= @item.introduction %></td>
+            </tr>
+
+            <tr style="border:none;">
+              <th style="border:none;">ジャンル</th>
+              <td style="border:none;"><%= @item.genre_id %></td>
+            </tr>
+
+            <tr style="border:none;">
+              <th style="border:none;">税込価格<br>(税抜価格)</th>
+              <td style="border:none;"><%= @item.price*1.1 %><br><%= @item.price %></td>
+            </tr>
+
+            <tr style="border:none;">
+              <th class="nowrap" style="border:none;">販売ステータス</th>
+              <td style="border:none;">
+                <% if @item.is_active == true %>
+                  販売中
+                  <% else %>
+                  販売停止中
+                  <% end %>
+              </td>
+            </tr>
+          </thead>
+    </table>
+
+    <%= link_to "編集する", edit_admin_item_path(@item.id), class:"btn btn-success"%>
+  </div>
+
+
+  </div>
+</div>
